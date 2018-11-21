@@ -11,7 +11,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source ~/.bin/tmuxinator.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export EDITOR='vim'
 
@@ -20,10 +20,11 @@ bindkey -v
 
 bindkey '^P' up-history
 bindkey '^N' down-history
-bindkey '^?' backward-delete-char
-bindkey '^h' backward-delete-char
-bindkey '^w' backward-kill-word
+bindkey "\e[3~" backward-delete-char
+bindkey '^b' backward-kill-word
 bindkey '^r' history-incremental-search-backward
+bindkey "^k" history-beginning-search-backward
+bindkey "^j" history-beginning-search-forward
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$fg[green]%}["
 ZSH_THEME_GIT_PROMPT_SUFFIX="]%{$reset_color%}"
@@ -85,3 +86,4 @@ fpath=( "$HOME/.zfunctions" $fpath )
 
 export PATH="/usr/local/opt/php@7.1/bin:$PATH"
 export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
+source /Users/petja/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
